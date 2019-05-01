@@ -78,6 +78,12 @@ a {
   outline-offset: 2px;
 }
 
+em {
+    color: #FF8100;
+    font-style: normal;
+    font-weight:bold;
+}
+
 /* Katex math typesetting */
 .katex * {
     margin-top: 0;
@@ -382,7 +388,7 @@ caption {
     list-style: none;
 }
 .patterns li + li {
-    margin-top: 0.75rem;
+    padding-top: 0em;
 }
 .patterns ul ul {
     margin-left: 0.75rem;
@@ -393,7 +399,7 @@ caption {
     flex-wrap: nowrap;
     align-items: baseline;
     font-weight: bold;
-    padding: 0 1rem;
+    padding: 0.5em 1rem;
 }
 .pattern a:focus {
     outline: none;
@@ -404,7 +410,7 @@ caption {
 
 /* After */
 .pattern [aria-current] {
-  background-color: #111;
+  background-color: #FF8100;
   clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
   color: #fefefe;
   padding-top: 0.5em;
