@@ -2,7 +2,7 @@
   <main id="main">
     <h1>{{ .Title }}</h1>
     <ul class="patterns-list">
-    {{ range .Pages.ByPublishDate.Reverse }}
+      {{ range (.Paginator 10).Pages.ByPublishDate.Reverse }}
       <li>
         <h2>
           <a href="{{ .Permalink }}">
@@ -11,9 +11,13 @@
             </svg>
             {{ .Title }}
           </a>
+          <small>{{ .PublishDate.Format "Jan 2, 2006" }}</small>
         </h2>
       </li>        
-    {{ end }}
+      {{ end }}
     </ul>
+    <div data-pagination>
+    {{ template "_internal/pagination.html" . }}
+    </div>
   </main>
 {{ end }}
