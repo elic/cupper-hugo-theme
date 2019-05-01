@@ -104,30 +104,5 @@
     el.style.cssText = prop + value;
     return mStyle[property];
   }
-
-  var checkbox = document.getElementById('themer');
-  var inverter = document.getElementById('inverter');
-
-  if (!CSSSupported('filter', 'invert(100%)')) {
-    checkbox.parentNode.hidden = true;
-    return;
-  }
-
-  function darkTheme(media) {
-    inverter.setAttribute('media', media);
-    inverter.textContent = inverter.textContent.trim();
-    localStorage.setItem('darkTheme', media);
-  }
-
-  checkbox.addEventListener('change', function () {
-    darkTheme(this.checked ? 'screen' : 'none');
-  });
-
-  window.addEventListener('DOMContentLoaded', function () {
-    if ('filter' in document.body.style) {
-      if (localStorage.getItem('darkTheme') === 'screen') {
-        checkbox.click();
-      }
-    }
-  });
+  
 }());
